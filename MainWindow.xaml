@@ -1,0 +1,28 @@
+﻿<Window x:Class="Pyatnashki.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pyatnashki"
+        mc:Ignorable="d"
+        Title="Игра Пятнашки" Height="350" Width="400">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10" HorizontalAlignment="Center">
+            <TextBlock Text="Размер поля (N x N): " VerticalAlignment="Center" Margin="0,0,5,0" FontWeight="Bold"/>
+            <!-- Поле, куда пользователь вводит цифру -->
+            <TextBox x:Name="TxtSize" Width="40" Text="4" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="3" Margin="0,0,10,0"/>
+            <Button x:Name="BtnStart" Content="Новая игра" Click="BtnStart_Click" Padding="15,5"/>
+        </StackPanel>
+
+        <!-- Игровое поле -->
+        <UniformGrid x:Name="GameGrid" Grid.Row="1" Background="#F0F0F0"/>
+
+    </Grid>
+</Window>
